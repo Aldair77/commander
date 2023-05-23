@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-import { Link } from 'components';
-import { userService } from 'services';
+import { Link } from '@/components/Link';
+import { userService } from '@/services/user.service';
 
 export default Index;
 
