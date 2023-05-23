@@ -81,7 +81,7 @@ function AddEdit(props) {
             <h1>{isAddMode ? 'Add User' : 'Edit User'}</h1>
             <div className="form-row">
                 <div className="form-group col">
-                    <label>Title</label>
+                    <label>Titutlo</label>
                     <select name="title" {...register('title')} className={`form-control ${errors.title ? 'is-invalid' : ''}`}>
                         <option value=""></option>
                         <option value="Mr">Mr</option>
@@ -92,12 +92,12 @@ function AddEdit(props) {
                     <div className="invalid-feedback">{errors.title?.message}</div>
                 </div>
                 <div className="form-group col-5">
-                    <label>First Name</label>
+                    <label>Nombre</label>
                     <input name="firstName" type="text" {...register('firstName')} className={`form-control ${errors.firstName ? 'is-invalid' : ''}`} />
                     <div className="invalid-feedback">{errors.firstName?.message}</div>
                 </div>
                 <div className="form-group col-5">
-                    <label>Last Name</label>
+                    <label>Apellido</label>
                     <input name="lastName" type="text" {...register('lastName')} className={`form-control ${errors.lastName ? 'is-invalid' : ''}`} />
                     <div className="invalid-feedback">{errors.lastName?.message}</div>
                 </div>
@@ -112,25 +112,25 @@ function AddEdit(props) {
                     <label>Role</label>
                     <select name="role" {...register('role')} className={`form-control ${errors.role ? 'is-invalid' : ''}`}>
                         <option value=""></option>
-                        <option value="User">User</option>
-                        <option value="Admin">Admin</option>
+                        <option value="User">Usuario</option>
+                        <option value="Admin">Administrador</option>
                     </select>
                     <div className="invalid-feedback">{errors.role?.message}</div>
                 </div>
             </div>
             {!isAddMode &&
                 <div>
-                    <h3 className="pt-3">Change Password</h3>
+                    <h3 className="pt-3">Cambiar contraseña</h3>
                     <p>Leave blank to keep the same password</p>
                 </div>
             }
             <div className="form-row">
                 <div className="form-group col">
                     <label>
-                        Password
+                        Contraseña
                         {!isAddMode &&
                             (!showPassword
-                                ? <span> - <a onClick={() => setShowPassword(!showPassword)} className="text-primary">Show</a></span>
+                                ? <span> - <a onClick={() => setShowPassword(!showPassword)} className="text-primary">Mostrar</a></span>
                                 : <em> - {user.password}</em>
                             )
                         }
@@ -139,7 +139,7 @@ function AddEdit(props) {
                     <div className="invalid-feedback">{errors.password?.message}</div>
                 </div>
                 <div className="form-group col">
-                    <label>Confirm Password</label>
+                    <label>Confirmar Contraseña</label>
                     <input name="confirmPassword" type="password" {...register('confirmPassword')} className={`form-control ${errors.confirmPassword ? 'is-invalid' : ''}`} />
                     <div className="invalid-feedback">{errors.confirmPassword?.message}</div>
                 </div>
@@ -147,10 +147,10 @@ function AddEdit(props) {
             <div className="form-group">
                 <button type="submit" disabled={formState.isSubmitting} className="btn btn-primary mr-2">
                     {formState.isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
-                    Save
+                    Guardar
                 </button>
                 <button onClick={() => reset(formOptions.defaultValues)} type="button" disabled={formState.isSubmitting} className="btn btn-secondary">Reset</button>
-                <Link href="/users" className="btn btn-link">Cancel</Link>
+                <Link href="/users" className="btn btn-link">Cancelar</Link>
             </div>
         </form>
     );
